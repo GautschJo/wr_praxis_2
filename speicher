@@ -1,0 +1,16 @@
+ 
+ for i in range(0, n):
+            for j in range(0, n):
+                # diagonale
+                if i == j:
+                    x = 0
+                    for k in range(0, i):
+                        x = x + (L[i, k] * L[i, k])
+                    L[i, i] = np.sqrt(M[i, i] - x)
+                # der rest
+                else:
+                    if i > j:
+                        x = 0
+                        for k in range(0, j):
+                            x = x + (L[i, k] * L[j, k])
+                        L[i, j] = (M[i, j] - x)/L[j, j]
